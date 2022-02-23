@@ -18,7 +18,7 @@
    </ul>
    <input id = "chat-box" placeholder="type message here">
    <input id = "chat-box-peer-id" placeholder="type peer id here">
-   <button id= "chat-with-peer-btn">Connect</button>
+   <button id= "chat-with-peer-btn">Send</button>
    <ul id="chat-log"></ul>
    <script>
        const peer = new Peer();
@@ -64,7 +64,6 @@
            const otherPeerId = peerIdInput.value;
            peerIdInput.value = "";
            const conn  = peer.connect(otherPeerId);
-           console.log(conn)
            
            conn.on("open",()=>{
                console.log(`connected to ${conn.peer}`);
